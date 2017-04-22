@@ -57,7 +57,7 @@ let EntryHandler = function() {
 
 	// DELETE an entry (DELETE /api/entries/:entry_id)
 	this.deleteEntry = (req, res) => {
-		Entry.remove({ _id: req.params.entry_id }, (err) => {
+		Entry.findByIdAndRemove(req.params.entry_id, (err) => {
 			if (err) return res.status(404).send();
 			TaskHandler.cascadeDelete(req.params.entry_id, (err) => {
 				if (err) console.error(err);

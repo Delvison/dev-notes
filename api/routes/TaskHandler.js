@@ -24,7 +24,6 @@ let TaskHandler = function() {
 			if (err) res.status(500).send();
 			if (!task) res.status(404).send();
 			// add task to entry 
-			// TODO: move functions to reduce dependencies and include models instead
 			this.addTaskToEntry(req.params.entry_id, task._id, (err, entry) => {
 				if (err) res.status(404).send();
 				return res.status(200).send(task);
@@ -46,7 +45,7 @@ let TaskHandler = function() {
 
 	// DELETE a task (DELETE /api/tasks/:task_id)
 	this.deleteTask = (req, res) => {
-		Task.remove({_id: req.params.task_id}, (err) => {
+		Task.findByIdAndRemove(req.params.task_id, (err) => {
 			if (err) return res.status(404).send();
 			// TODO: remove task from Entry
 			return res.status(200).send();
