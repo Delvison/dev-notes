@@ -1,0 +1,10 @@
+{
+	"APP_SERVER": "127.0.0.1",
+	"PORT": "3000",
+	"APP_URL": "http://127.0.0.1:3000",
+	"LOGIN_API": "/api/users/login",
+	"USER_API": "/api/users",
+	"PROJECT_API": "/api/projects",
+	"ENTRY_API": "/api/entries",
+	"TASK_API": "/api/tasks"
+}
