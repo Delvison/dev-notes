@@ -40,17 +40,16 @@ UserHandler.prototype.login = function(req,res){
   User.findOne({email:email}, function(err, user){
     if (err) return res.status(500).send()
     if (!user) return res.status(404).send();
-    if (pass_util.validate_password(password, user.salt, user.password)){
+    if (pass_util.validate_password(password, user.salt, user.password)) {
 			req.session.user = user;
-      res.json({
+			return res.status(200).send({
         id: user._id,
         email: user.email,
         username: user.username
-      });
-			return res.status(200).send()
+      })
     } else {
       //invalid password
-      return res.status(401).send();
+      return res.status(401).send({error: "invalid password"});
     }
   })
 }

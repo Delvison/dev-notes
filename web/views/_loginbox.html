@@ -1,0 +1,38 @@
+<div id="login-container" class="login-center" ng-controller="loginController">
+
+	<form action="" method="post" name="login-form" ng-submit="login()">
+		<label for="username">Email:</label>
+		<input
+			type="text"
+			name="email"
+			ng-model="user.email"
+			required>
+		<span ng-show="login-form.email.$error.email">Not a valid email!</span>
+
+		<br>
+		<label for="password">Password:</label>
+		<input
+			type="password"
+			name="password"
+			ng-model="user.password"
+			ng-minlength="6"
+			ng-maxlength="25"
+			required>
+		<span ng-show="login-form.password.$error.minlength">too short!</span>
+		<span ng-show="login-form.password.$error.maxlength">too long!</span>
+
+		<div class="alert alert-danger" id="error-msg" ng-if="errorMsg">
+			<strong>Error:</strong> {{ errorMsg }}
+		</div>
+
+		<div id="lower">
+			<input type="checkbox">
+			<label for="checkbox">Keep me logged in</label>
+			<input ng-disabled="login-form.$invalid" type="submit" value="Login">
+			<br />
+			<center>
+				<a href="views/register.html">Not a member? Register!</a>
+			</center>
+		</div><!--/ lower-->
+	</form>
+</div>

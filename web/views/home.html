@@ -1,0 +1,45 @@
+<div class="page container-fluid">
+  <div id="dashboard" ng-controller="dashboardController">
+    <div class="col-md-2  projects">
+      <h2>Projects</h2>
+      <form name="project-form" ng-submit="createProject()">
+        <input
+          type="text"
+          ng-model="newProject"
+          required>
+        <input ng-disabled="project-form.$invalid" type="submit" value="Add Project">
+      </form>
+      <div ng-repeat="project in projects">
+        <ul>
+          <li>
+            <a ng-href="#home"
+            ng-click=getEntries(project._id)>
+                {{project.title}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-10 ">
+      <h1 ng-show="selected_project_id">{{selected_project_id}}</h1>
+
+			<form name="entry-form" ng-submit="createEntry()">
+        <input
+          type="text"
+          ng-model="newEntryTitle"
+          required>
+        <input ng-disabled="entry-form.$invalid" type="submit" value="Add Entry">
+      </form>
+
+      <h1 ng-hide="entries">No entries exist</h1>
+      <div ng-show="entries">
+        <div ng-repeat="entry in entries">
+          <ng-include src="'/views/_entry.html'"></ng-include>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

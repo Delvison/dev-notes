@@ -1,0 +1,29 @@
+<h4>Tasks</h4>
+<form
+  name="task-form"
+  ng-controller="dashboardController"
+  ng-submit="createTask(entry._id)">
+  <span>
+    <input
+      type="text"
+      ng-model="newTask"
+      required>
+  </span>
+  <span>
+    <input ng-disabled="task-form.$invalid" type="submit" value="Add Task">
+  </span>
+</form>
+
+<ul class='task-list'>
+  <li ng-repeat="task in entry.tasks">
+    <label>
+      <input
+        type="checkbox"
+        name="task"
+        class="task-checkbox"
+        ng-model="task.is_complete"
+        ng-change="updateTask(task)">
+      <span>{{task.task_text}}</span>
+    </label>
+  </li>
+</ul>

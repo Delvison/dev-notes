@@ -1,4 +1,4 @@
-// ./models/task.js 
+// ./models/task.js
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -25,7 +25,8 @@ var TaskSchema = new Schema({
 	},
 	task_text: {
 		type: String,
-		default: ""
+		default: "",
+		required: true
 	}
 });
 

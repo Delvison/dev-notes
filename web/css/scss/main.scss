@@ -1,0 +1,71 @@
+body {
+	background-color: rgb(237, 237, 237);
+}
+
+.dev-mode {
+	border: red solid 2px;
+}
+
+.page {
+	margin-top: 70px !important;
+}
+
+.card {
+	background: white;
+	border-radius: 5px;
+}
+
+// div for each individual entry
+.entry {
+	background: white;
+	border-radius: 5px;
+	height: 400px;
+	margin: 10px;
+	box-shadow: 3px 3px 10px;
+	.entry-top-left{
+		float: left;
+	}
+	.entry-top-right{
+		float: right;
+	}
+	.entry-content {
+		height: 260px;
+		width: 100%;
+		resize: none;
+		// overflow: auto;
+	}
+	.entry-text {
+		height: 100%;
+		margin-top: 10px;
+	}
+	#rm-entry-btn{
+		
+	}
+}
+
+// div that holds tasks
+.tasks {
+	// background-color: rgb(221, 254, 255);
+	overflow: auto;
+	height: 100%;
+	.task-list {
+		margin: 0;
+		list-style: none;
+		padding: 0;
+		li{
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+
+.projects {
+	input[type=text]{
+		width: 100%;
+	}
+
+	ul {
+		list-style: none;
+	}
+}

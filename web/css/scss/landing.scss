@@ -1,0 +1,32 @@
+#landing-main {
+  margin-top: 50px;
+  background: linear-gradient(
+    rgba(0,0,0, 0.7),
+    rgba(0,0,0, 0.7)
+  ), url('/img/bg-landing.jpg');
+  height: 600px;
+
+  .heading {
+    margin-top: 50px;
+  }
+  .login-signup {
+    margin-top: 50px;
+  }
+  h1 {
+    color: white;
+    font-size: 75px;
+  }
+  h2{
+    color: white;
+  }
+  p {
+    color: white;
+  }
+
+}
+
+.landing-footer {
+  background-color: #000000;
+  height: 300px;
+  bottom: 0;
+}

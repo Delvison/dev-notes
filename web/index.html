@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Dev-Notes">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dev-Notes!</title>
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/angular-route/angular-route.min.js"></script>
+  <script src="/bower_components/jquery/jquery.min.js"></script>
+  <link rel="stylesheet" href="/bower_components/bootstrap-css/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel=icon href=img/favicon.png>
+
+
+  <script src="/js/controller.js"></script>
+  <script src="/js/sessionService.js"></script>
+  <script src="/js/authService.js"></script>
+  <script src="/js/getDataService.js"></script>
+  <script src="/js/login_controller.js"></script>
+  <script src="/js/navbar_controller.js"></script>
+  <script src="/js/profileController.js"></script>
+  <script src="/js/registerController.js"></script>
+  <script src="/js/dashboardController.js"></script>
+  <script src="/directives/loginDirective.js"></script>
+  <script src="/directives/pwCheck.js"></script>
+
+
+</head>
+<body>
+  <ng-include src="'/views/_navbar.html'"></ng-include>
+  <main ng-view></main>
+
+
+<!-- <script src="bower_components/livereload-js/dist/livereload.js"></script> -->
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>

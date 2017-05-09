@@ -4,7 +4,8 @@
   "description": "an api for dev notes",
   "main": "server.js",
   "scripts": {
-    "test": "mocha ./test/"
+    "test": "mocha ./test/",
+    "start": "node server.js"
   },
   "author": "delvisoncastillo@gmail.com",
   "license": "MIT",

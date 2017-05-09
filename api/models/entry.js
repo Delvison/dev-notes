@@ -1,4 +1,4 @@
-// ./models/entry.js 
+// ./models/entry.js
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -16,7 +16,8 @@ var EntrySchema = new Schema({
 	},
 	title: {
 		type: String,
-		required: false
+		required: false,
+		default: Date.now.toString()
 	},
 	date_created: {
       type: Date,

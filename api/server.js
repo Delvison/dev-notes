@@ -37,16 +37,6 @@ mongoose.connect(db, function(err) {
 });
 
 
-// route middleware
-app.use(function(req,res,next){
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-  next();
-  console.log(new Date(),req.method, req.url, req.body);
-  console.log("    RESPONSE ",res.statusCode);
-});
-
 // API handlers
 var UserHandler = require('./routes/UserHandler.js');
 var ProjectHandler = require('./routes/ProjectHandler.js');
